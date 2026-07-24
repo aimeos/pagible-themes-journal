@@ -241,13 +241,13 @@ header nav ul.menu > li:first-child a {
     padding: 0.5rem;
 }
 
-header nav ul.menu > li:has(+ li.login) {
+header nav ul.menu > li.subscribe {
     inset-block-start: 2.15rem;
     inset-inline-end: 2rem;
     position: absolute;
 }
 
-header nav ul.menu > li:has(+ li.login) > a {
+header nav ul.menu > li.subscribe > a {
     background: var(--pico-primary);
     color: var(--pico-primary-inverse);
     font-size: 0.75rem;
@@ -257,9 +257,9 @@ header nav ul.menu > li:has(+ li.login) > a {
     white-space: nowrap;
 }
 
-header nav ul.menu > li:has(+ li.login) > a:hover,
-header nav ul.menu > li:has(+ li.login) > a:focus,
-header nav ul.menu > li:has(+ li.login) > a:active {
+header nav ul.menu > li.subscribe > a:hover,
+header nav ul.menu > li.subscribe > a:focus,
+header nav ul.menu > li.subscribe > a:active {
     background: var(--pico-primary-hover);
     color: var(--pico-primary-inverse);
 }
@@ -356,7 +356,7 @@ header nav .sidebar-close button {
 
     header nav.small .menu li,
     header nav.small .menu > li:first-child,
-    header nav.small .menu > li:has(+ li.login) {
+    header nav.small .menu > li.subscribe {
         inset: auto;
         padding: 0;
         position: relative;
@@ -377,7 +377,7 @@ header nav .sidebar-close button {
         justify-content: flex-start;
     }
 
-    header nav.small .menu > li:has(+ li.login) a {
+    header nav.small .menu > li.subscribe a {
         display: inline-flex;
         font-family: var(--pico-font-family-sans-serif);
         font-size: 0.75rem;

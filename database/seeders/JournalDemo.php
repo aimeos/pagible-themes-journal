@@ -412,7 +412,7 @@ class JournalDemo extends AbstractDemo
             ]],
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
                 'title' => 'What matters today',
-                'columns' => 4,
+                'columns' => 2,
                 'cards' => [
                     ['title' => 'Industry without a blueprint', 'text' => "Factories must become cleaner, more digital, and more independent at once. The rebuild starts while production continues.\n\n[Read the industrial analysis](/industry-without-a-blueprint)", 'file' => ['id' => $this->img( 'factory' ), 'type' => 'file']],
                     ['title' => 'Who owns the grid?', 'text' => "The energy transition needs networks, storage, and patience. The real conflict begins with the capital behind them.\n\n[Open the energy dossier](/who-owns-the-grid)", 'file' => ['id' => $this->img( 'wind' ), 'type' => 'file']],

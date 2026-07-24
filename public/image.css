@@ -13,8 +13,12 @@
 .image picture,
 picture.image {
     background-color: var(--pico-contrast-inverse);
-    border-block: 1px solid var(--pico-muted-border-color);
     display: block;
     margin-block: 2rem;
     padding-block: 1rem;
+}
+
+.image picture img,
+picture.image img {
+    border-block: 1px solid var(--pico-muted-border-color);
 }

@@ -55,6 +55,7 @@
 
 .cms-content .list img {
     aspect-ratio: 16 / 9;
+    border-block: 1px solid var(--pico-muted-border-color);
     display: block;
     object-fit: cover;
     width: 100%;
@@ -74,7 +75,7 @@
 
 .cms-content .list h3 {
     font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-    margin: 0.5rem 0 0;
+    margin: 0.5rem 0 1rem;
 }
 
 .cms-content .list .list-list .list-item {
@@ -107,12 +108,5 @@
     .cms-content .list .list-default,
     .cms-content .list .list-cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (min-width: 992px) {
-    .cms-content .list .list-default,
-    .cms-content .list .list-cards {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }

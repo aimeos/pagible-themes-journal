@@ -58,7 +58,7 @@
 
 .hero .first:has(+ .second) {
     align-self: center;
-    margin-block: clamp(3rem, 8vw, 6rem);
+    margin-block: 2rem;
     margin-inline: 0;
     max-width: 40rem;
     position: relative;

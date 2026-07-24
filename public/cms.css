@@ -142,7 +142,6 @@ body > header nav {
     flex-wrap: wrap;
     margin: auto;
     max-width: var(--journal-content-width);
-    padding: 0 2rem;
     position: relative;
 }
 
@@ -242,13 +241,13 @@ header nav ul.menu > li:first-child a {
     padding: 0.5rem;
 }
 
-header nav ul.menu > li:last-of-type {
+header nav ul.menu > li:has(+ li.login) {
     inset-block-start: 2.15rem;
     inset-inline-end: 2rem;
     position: absolute;
 }
 
-header nav ul.menu > li:last-of-type > a {
+header nav ul.menu > li:has(+ li.login) > a {
     background: var(--pico-primary);
     color: var(--pico-primary-inverse);
     font-size: 0.75rem;
@@ -258,9 +257,9 @@ header nav ul.menu > li:last-of-type > a {
     white-space: nowrap;
 }
 
-header nav ul.menu > li:last-of-type > a:hover,
-header nav ul.menu > li:last-of-type > a:focus,
-header nav ul.menu > li:last-of-type > a:active {
+header nav ul.menu > li:has(+ li.login) > a:hover,
+header nav ul.menu > li:has(+ li.login) > a:focus,
+header nav ul.menu > li:has(+ li.login) > a:active {
     background: var(--pico-primary-hover);
     color: var(--pico-primary-inverse);
 }
@@ -304,10 +303,6 @@ header nav .sidebar-close button {
 }
 
 @media (max-width: 991px) {
-    body > header nav {
-        padding: 0 1rem;
-    }
-
     header nav > ul:first-of-type {
         justify-content: flex-start;
         min-height: 5rem;
@@ -361,7 +356,7 @@ header nav .sidebar-close button {
 
     header nav.small .menu li,
     header nav.small .menu > li:first-child,
-    header nav.small .menu > li:last-child {
+    header nav.small .menu > li:has(+ li.login) {
         inset: auto;
         padding: 0;
         position: relative;
@@ -382,7 +377,7 @@ header nav .sidebar-close button {
         justify-content: flex-start;
     }
 
-    header nav.small .menu > li:last-child a {
+    header nav.small .menu > li:has(+ li.login) a {
         display: inline-flex;
         font-family: var(--pico-font-family-sans-serif);
         font-size: 0.75rem;

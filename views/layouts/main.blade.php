@@ -1,3 +1,6 @@
+@php
+    $nav ??= new \Aimeos\Cms\Navigation($page, auth()->user());
+@endphp
 <!DOCTYPE html>
 <html class="no-js" data-theme="light" lang="{{ cms($page, 'lang') }}" dir="{{ in_array(cms($page, 'lang'), ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ur']) ? 'rtl' : 'ltr' }}">
     <head>

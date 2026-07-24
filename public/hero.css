@@ -32,6 +32,7 @@
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr;
+    padding-block: 4rem;
     position: relative;
     z-index: 1;
 }

@@ -25,6 +25,6 @@ main .cms-content > .toc .container {
 }
 
 .cms-content .container {
-    padding-block: 0;
+    padding-block: 0.5rem;
     padding-inline: min(5vw, 4rem);
 }

@@ -97,7 +97,7 @@ class JournalDemo extends AbstractDemo
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
                 'file' => ['id' => $this->img( 'team' ), 'type' => 'file'],
                 'position' => 'end',
-                'ratio' => '1-2',
+                'ratio' => '1-1',
                 'text' => "## An editorial room built for disagreement\n\nKontur is produced in Hamburg, with correspondents in Berlin, Frankfurt, Munich, Brussels, and Zurich. Expertise sits beside scepticism in every conference. The result is more exact, not more dramatic.\n\nWriters disclose investments and potential conflicts of interest. Companies may check quotations, but they never preview our conclusions.",
             ]],
             ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
@@ -191,7 +191,7 @@ class JournalDemo extends AbstractDemo
                 ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
                     'file' => ['id' => $this->img( $story['second'] ), 'type' => 'file'],
                     'position' => 'end',
-                    'ratio' => '1-2',
+                    'ratio' => '1-1',
                     'text' => $story['body'],
                 ]],
                 ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
@@ -423,7 +423,7 @@ class JournalDemo extends AbstractDemo
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
                 'file' => ['id' => $this->img( 'technology' ), 'type' => 'file'],
                 'position' => 'end',
-                'ratio' => '1-2',
+                'ratio' => '1-1',
                 'text' => "## The new industrial atlas\n\nWhere are batteries, chips, heat pumps, and data centres being built? Kontur tracks 180 investment projects to show which regions benefit—and where grids, land, or skilled workers are missing.\n\nThe interactive map connects announced billions with visible building progress. A groundbreaking ceremony is not a factory.\n\n[Explore the industrial atlas story](/industry-without-a-blueprint)",
             ]],
             ['id' => Utils::uid(), 'type' => 'blog', 'group' => 'main', 'data' => [
@@ -437,9 +437,9 @@ class JournalDemo extends AbstractDemo
                 'title' => 'Money that fits your life',
                 'columns' => 3,
                 'cards' => [
-                    ['title' => 'Rethinking interest', 'text' => "Cash, bonds, loans: the old logic of zero rates no longer applies.\n\n[See what interest rates change](/what-interest-rates-change)", 'file' => ['id' => $this->img( 'contract' ), 'type' => 'file']],
-                    ['title' => 'Quiet beats fashionable', 'text' => "Why consistent saving rules matter more than the next popular stock.\n\n[Reset the portfolio](/the-portfolio-without-fads)", 'file' => ['id' => $this->img( 'savings' ), 'type' => 'file']],
-                    ['title' => 'Renovate in the right order', 'text' => "Measure first, plan second, build last: a sequence that keeps cost and comfort visible.\n\n[Read the renovation plan](/renovating-in-the-right-order)", 'file' => ['id' => $this->img( 'home' ), 'type' => 'file']],
+                    ['title' => 'Interest rates change the rules', 'text' => "Cash, bonds, loans: the old logic of zero rates no longer applies.\n\n[See what interest rates change](/what-interest-rates-change)", 'file' => ['id' => $this->img( 'contract' ), 'type' => 'file']],
+                    ['title' => 'Quiet portfolios outlast trends', 'text' => "Why consistent saving rules matter more than the next popular stock.\n\n[Reset the portfolio](/the-portfolio-without-fads)", 'file' => ['id' => $this->img( 'savings' ), 'type' => 'file']],
+                    ['title' => 'Renovation begins with the plan', 'text' => "Measure first, plan second, build last: a sequence that keeps cost and comfort visible.\n\n[Read the renovation plan](/renovating-in-the-right-order)", 'file' => ['id' => $this->img( 'home' ), 'type' => 'file']],
                 ],
             ]],
             ['id' => Utils::uid(), 'type' => 'testimonial', 'group' => 'main', 'data' => [

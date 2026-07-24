@@ -24,7 +24,7 @@ Journal is sober, structured, and image-led. The page surround is warm gray (`#F
 - Geometry: `--pico-border-radius: 0`; cards, dialogs, fields, and buttons stay square
 - Accent: ochre is reserved for categories, primary actions, focus, and active navigation
 - Images: editorial crops use `16 / 10`, article leads use `16 / 9`, and split features use `4 / 3`
-- Maximum width: 80rem page frame, 76rem content, 64rem article components, 48rem prose
+- Maximum width: 1156px shared page frame, with narrower article and prose measures where readability requires them
 
 ## Component Rules
 
@@ -50,7 +50,7 @@ Journal is sober, structured, and image-led. The page surround is warm gray (`#F
 - Write precise, direct headlines that state the tension or consequence
 - Prefer concrete nouns, quantities, and decisions over slogans
 - Keep summaries to two or three sentences and say why the story matters
-- Use descriptive link text such as `Analyse zu Stromnetzen lesen`, not `Mehr erfahren`
+- Use descriptive link text such as `Read the electricity-grid analysis`, not `Learn more`
 
 ## Prohibited Patterns
 
@@ -65,6 +65,6 @@ Journal is sober, structured, and image-led. The page surround is warm gray (`#F
 - Keyboard focus is visible on navigation, dropdowns, search, forms, and article links
 - Lead and supporting story hierarchy is clear without relying on image content
 - All card and article images retain intentional aspect ratios without distortion
-- Long German labels wrap without overlapping search or subscription actions
+- Long navigation labels wrap without overlapping search or subscription actions
 - Reduced-motion mode removes nonessential image scaling
 - JSON schema, PHP syntax, demo seeding, representative route rendering, PHPUnit, and PHPStan pass

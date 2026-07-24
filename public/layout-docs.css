@@ -3,7 +3,7 @@
  */
 
 main {
-    max-width: 80rem;
+    max-width: var(--journal-content-width);
     margin: auto;
     width: 100%;
 }

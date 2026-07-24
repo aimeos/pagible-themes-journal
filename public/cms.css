@@ -4,6 +4,7 @@
  */
 
 :root[data-theme=light] {
+    --journal-content-width: 1156px;
     --pico-font-family-sans-serif: Arial, Helvetica, ui-sans-serif, sans-serif;
     --pico-font-family-display: Georgia, 'Times New Roman', ui-serif, serif;
     --pico-font-family-monospace: ui-monospace, monospace;
@@ -140,7 +141,7 @@ body > header nav {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    max-width: 80rem;
+    max-width: var(--journal-content-width);
     padding: 0 2rem;
     position: relative;
 }
@@ -407,7 +408,7 @@ nav.breadcrumb {
 
 nav.breadcrumb > ul {
     margin: auto;
-    max-width: 76rem;
+    max-width: var(--journal-content-width);
     padding: 0 2rem;
     width: 100%;
 }
@@ -435,7 +436,7 @@ nav.breadcrumb ul li a:hover {
 }
 
 .container {
-    max-width: 76rem !important;
+    max-width: var(--journal-content-width) !important;
 }
 
 .cms-text {

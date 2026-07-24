@@ -9,7 +9,7 @@
 
 main .cms-content {
     margin: 1rem auto 3rem;
-    max-width: 80rem;
+    max-width: var(--journal-content-width);
 }
 
 main .cms-content > * {

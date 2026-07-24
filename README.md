@@ -17,18 +17,18 @@ php artisan vendor:publish --tag=cms-theme
 - **Colors**: Warm gray page, white story modules, charcoal text, ochre accents
 - **Typography**: Serif masthead and headlines with a compact system sans-serif UI
 - **Borders**: Sharp corners, thin rules, and no decorative shadows
-- **Layout**: Centered masthead, separate category rail, lead-story grids, and narrow article measure
+- **Layout**: Centered masthead and page content aligned to a shared 1156px frame, with a separate category rail and narrow article measure
 - **CSS framework**: Pico CSS with `--pico-*` custom property overrides
 
 ## Demo
 
-The package includes `Database\Seeders\JournalDemo`, a complete German business publication named **Kontur**:
+The package includes `Database\Seeders\JournalDemo`, a complete fictional English-language business publication named **Kontur**:
 
 ```bash
 php artisan cms:demo --theme=journal --tenant=journal
 ```
 
-It creates Wirtschaft, Geld, Immobilien, and Karriere sections with original articles, an editorial about page, subscription options, shared footer navigation, localized media descriptions, and search metadata.
+It creates Economy, Money, Property, and Work sections with original articles, an editorial about page, subscription options, shared footer navigation, localized media descriptions, and search metadata. Every person, quotation, organisation, price, and contact detail in the demo is explicitly fictional.
 
 ## Page Types
 

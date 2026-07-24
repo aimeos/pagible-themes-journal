@@ -17,26 +17,26 @@ use Illuminate\Support\Str;
 
 
 /**
- * Journal theme demo for the fictional German business publication Kontur.
+ * Journal theme demo for the fictional English language business publication Kontur.
  */
 class JournalDemo extends AbstractDemo
 {
     /** @var array<string, string> Meta descriptions keyed by page path */
     private const DESCRIPTIONS = [
-        'wirtschaft' => 'Kontur ordnet Industrie, Energie, Technologie und Mittelstand ein: gründlich recherchiert, verständlich geschrieben und ohne Börsenlärm.',
-        'industrie-ohne-blaupause' => 'Wie deutsche Industrieunternehmen ihre Produktion umbauen, während Energiepreise, Lieferketten und Fachkräftemangel gleichzeitig Druck machen.',
-        'wem-gehoert-der-strom' => 'Netze, Speicher und neue Kraftwerke entscheiden über die Energiewende. Kontur zeigt, wo Kapital fehlt und welche Modelle funktionieren.',
-        'geld' => 'Analysen zu Geldanlage, Zinsen, Altersvorsorge und Vermögensaufbau für Menschen, die Entscheidungen verstehen statt Trends hinterherlaufen wollen.',
-        'das-portfolio-ohne-modetrends' => 'Ein belastbares ETF-Portfolio braucht weniger Produkte, klare Regeln und einen Anlagehorizont, der auch schlechte Börsenmonate aushält.',
-        'was-zinsen-wirklich-veraendern' => 'Was neue Zinsniveaus für Sparer, Kreditnehmer und langfristige Anleger bedeuten und welche alten Gewohnheiten jetzt teuer werden.',
-        'immobilien' => 'Kontur berichtet über Wohnen, Bauen, Sanieren und Immobilienmärkte mit Blick auf Kosten, Regulierung und lebenswerte Städte.',
-        'wohnen-wird-wieder-urban' => 'Warum gemischte Quartiere, kleinere Grundrisse und der Umbau bestehender Gebäude den Wohnungsmarkt stärker prägen als neue Großprojekte.',
-        'sanieren-mit-plan' => 'Welche Reihenfolge bei einer energetischen Sanierung Kosten spart, Risiken begrenzt und ein Haus über Jahrzehnte verlässlich verbessert.',
-        'karriere' => 'Arbeit, Führung und Unternehmenskultur jenseits schneller Karrieretipps: Kontur fragt, welche Strukturen gute Arbeit tatsächlich möglich machen.',
-        'produktivitaet-braucht-ruhe' => 'Warum konzentrierte Arbeit nicht mit noch mehr Meetings, Nachrichten und Kennzahlen entsteht, sondern durch verlässliche Zeit und klare Zuständigkeit.',
-        'fuehren-ohne-buehne' => 'Gute Führung zeigt sich in Entscheidungen, Vorbereitung und Verantwortung, nicht in Dauerpräsenz und großen Auftritten.',
-        'ueber-kontur' => 'Kontur ist ein unabhängiges Wirtschaftsjournal aus Hamburg. Lernen Sie Redaktion, Haltung und Arbeitsweise kennen.',
-        'abo' => 'Lesen Sie Kontur digital, als gedrucktes Monatsmagazin oder im Mitgliederbriefing mit zusätzlichen Dossiers und Gesprächen.',
+        'economy' => 'Kontur explains industry, energy, technology, and independent business with careful reporting, clear writing, and none of the market noise.',
+        'industry-without-a-blueprint' => 'How industrial companies are rebuilding production while energy costs, supply chains, and skills shortages apply pressure at the same time.',
+        'who-owns-the-grid' => 'Networks, storage, and new power generation will shape the energy transition. Kontur follows the missing capital and the models that can work.',
+        'money' => 'Analysis of investing, interest rates, retirement planning, and wealth for readers who want to understand decisions instead of chasing trends.',
+        'the-portfolio-without-fads' => 'A resilient ETF portfolio needs fewer products, clear rules, and a time horizon that can withstand difficult months in the market.',
+        'what-interest-rates-change' => 'What the new interest-rate environment means for savers, borrowers, and long-term investors—and which old habits have become expensive.',
+        'property' => 'Kontur reports on housing, construction, renovation, and property markets through the lens of cost, regulation, and liveable cities.',
+        'housing-returns-to-the-city' => 'Why mixed neighbourhoods, smaller homes, and converted buildings will shape housing more than another generation of large greenfield projects.',
+        'renovating-in-the-right-order' => 'The sequence of energy upgrades that controls costs, limits risk, and improves a home reliably for decades.',
+        'work' => 'Work, leadership, and culture beyond quick career advice: Kontur asks which structures genuinely make good work possible.',
+        'productivity-needs-quiet' => 'Why focused work comes from protected time and clear responsibility—not another round of meetings, messages, and metrics.',
+        'leadership-without-the-stage' => 'Good leadership is visible in decisions, preparation, and responsibility, not constant presence and grand performances.',
+        'about-kontur' => 'Kontur is a fictional independent business journal created for this demo. Meet its invented editorial team and explore how the publication works.',
+        'subscribe' => 'Read the fictional Kontur demo online, as a monthly print magazine, or through a member briefing with additional dossiers and conversations.',
     ];
 
     /**
@@ -45,20 +45,20 @@ class JournalDemo extends AbstractDemo
      * @var array<string, array{0: string, 1: string, 2: string}>
      */
     private const PHOTOS = [
-        'architecture' => ['photo-1486406146926-c627a92ad1ab', 'Neue Stadt', 'Moderne Büroarchitektur mit gerasterter Glasfassade'],
-        'boardroom' => ['photo-1497366754035-f200968a6e72', 'Redaktionskonferenz', 'Helles Büro mit langem Tisch für eine gemeinsame Redaktionskonferenz'],
-        'city' => ['photo-1449824913935-59a10b8d2000', 'Metropole im Wandel', 'Breite Straße zwischen dichten Hochhäusern in einer internationalen Metropole'],
-        'construction' => ['photo-1504307651254-35680f356dfd', 'Sanierung', 'Baustelle eines großen Gebäudes während der Sanierung'],
-        'contract' => ['photo-1450101499163-c8848c66ca85', 'Finanzplanung', 'Unterlagen, Stift und Taschenrechner auf einem Schreibtisch'],
-        'desk' => ['photo-1497215728101-856f4ea42174', 'Konzentrierte Arbeit', 'Ruhiger Arbeitsplatz mit Schreibtischen und großen Fenstern'],
-        'factory' => ['photo-1565793298595-6a879b1d9492', 'Industrielogistik', 'Lastwagen und Verladeflächen als Teil einer großen industriellen Lieferkette'],
-        'home' => ['photo-1560518883-ce09059eeffa', 'Wohneigentum', 'Modernes Wohnhaus mit klarer Fassade und Vorgarten'],
-        'market' => ['photo-1611974789855-9c2a0a7236a3', 'Kapitalmarkt', 'Digitale Kursanzeige mit Marktbewegungen und Kennzahlen'],
-        'portrait' => ['photo-1556761175-b413da4baf72', 'Unternehmergespräch', 'Gespräch zwischen Führungskräften an einem hellen Besprechungstisch'],
-        'savings' => ['photo-1579621970795-87facc2f976d', 'Langfristig sparen', 'Münzen und kleine Pflanze als Bild für langfristigen Vermögensaufbau'],
-        'team' => ['photo-1521737711867-e3b97375f902', 'Gemeinsame Arbeit', 'Team bei einer konzentrierten Besprechung an einem Holztisch'],
-        'technology' => ['photo-1535378917042-10a22c95931a', 'Automatisierung', 'Humanoider Roboter als Beispiel für neue Automatisierungstechnik'],
-        'wind' => ['photo-1676749979869-81161c8824ee', 'Windkraft in der Fläche', 'Eine Reihe weißer Windräder auf einem weiten grünen Feld'],
+        'architecture' => ['photo-1486406146926-c627a92ad1ab', 'A changing city', 'Modern office architecture with a gridded glass facade'],
+        'boardroom' => ['photo-1497366754035-f200968a6e72', 'Editorial conference', 'Bright office with a long table prepared for an editorial conference'],
+        'city' => ['photo-1449824913935-59a10b8d2000', 'Metropolis in transition', 'Broad avenue running between dense towers in an international city'],
+        'construction' => ['photo-1504307651254-35680f356dfd', 'Building renovation', 'Large building site during an extensive renovation'],
+        'contract' => ['photo-1450101499163-c8848c66ca85', 'Financial planning', 'Documents, a pen, and a calculator arranged on a desk'],
+        'desk' => ['photo-1497215728101-856f4ea42174', 'Focused work', 'Quiet workspace with desks and large windows'],
+        'factory' => ['photo-1565793298595-6a879b1d9492', 'Industrial logistics', 'Lorries and loading bays within a large industrial supply chain'],
+        'home' => ['photo-1560518883-ce09059eeffa', 'Home ownership', 'Modern residential building with a clean facade and front garden'],
+        'market' => ['photo-1611974789855-9c2a0a7236a3', 'Capital markets', 'Digital market display showing price movements and financial figures'],
+        'portrait' => ['photo-1556761175-b413da4baf72', 'Business conversation', 'Executives in conversation around a bright meeting table'],
+        'savings' => ['photo-1579621970795-87facc2f976d', 'Long-term saving', 'Coins and a small plant representing long-term wealth building'],
+        'team' => ['photo-1521737711867-e3b97375f902', 'Working together', 'Team holding a focused discussion around a wooden table'],
+        'technology' => ['photo-1535378917042-10a22c95931a', 'Automation', 'Humanoid robot representing new automation technology'],
+        'wind' => ['photo-1676749979869-81161c8824ee', 'Wind power', 'A row of white wind turbines across a wide green field'],
     ];
 
     private string $element;
@@ -71,49 +71,52 @@ class JournalDemo extends AbstractDemo
     protected function addAbout( Page $home ) : static
     {
         $this->page( [
-            'lang' => 'de',
-            'name' => 'Über uns',
-            'title' => 'Über Kontur',
-            'path' => 'ueber-kontur',
+            'lang' => 'en',
+            'name' => 'About us',
+            'title' => 'About Kontur',
+            'path' => 'about-kontur',
             'tag' => 'page',
             'type' => 'page',
             'status' => 1,
         ], [
             ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
-                'title' => 'Wirtschaft braucht Zusammenhang',
-                'subtitle' => 'Die Redaktion',
-                'text' => 'Kontur berichtet über Unternehmen, Geld, Immobilien und Arbeit. Uns interessiert nicht nur, was passiert, sondern wer entscheidet, wer bezahlt und was eine Entwicklung im Alltag verändert.',
+                'title' => 'Business needs context',
+                'subtitle' => 'The editorial team',
+                'text' => 'Kontur reports on companies, money, property, and work. We ask not only what happened, but who decided, who pays, and what each development changes in everyday life.',
                 'files' => [['id' => $this->img( 'boardroom' ), 'type' => 'file']],
             ]],
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
-                'title' => 'So arbeiten wir',
+                'title' => 'How we work',
                 'columns' => 3,
                 'cards' => [
-                    ['title' => 'Vor Ort', 'text' => 'Wir sprechen mit Menschen, die Fabriken, Portfolios, Baustellen und Teams tatsächlich verantworten.'],
-                    ['title' => 'Mit Zahlen', 'text' => 'Wir prüfen Größenordnungen, Zeiträume und Interessen. Eine Zahl ohne Vergleich ist selten eine gute Erklärung.'],
-                    ['title' => 'Für den zweiten Blick', 'text' => 'Wir veröffentlichen weniger, redigieren gründlich und aktualisieren Analysen, wenn sich die Fakten ändern.'],
+                    ['title' => 'On the ground', 'text' => 'We speak with the people responsible for factories, portfolios, building sites, and teams.'],
+                    ['title' => 'With the numbers', 'text' => 'We test scale, time frames, and interests. A number without a comparison rarely explains much.'],
+                    ['title' => 'For a second look', 'text' => 'We publish less, edit carefully, and update analysis when the facts change.'],
                 ],
             ]],
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
                 'file' => ['id' => $this->img( 'team' ), 'type' => 'file'],
                 'position' => 'end',
                 'ratio' => '1-2',
-                'text' => "## Eine Redaktion mit Widerspruch\n\nKontur wird in Hamburg gemacht, mit Korrespondentinnen und Autoren in Berlin, Frankfurt, München, Brüssel und Zürich. In jeder Konferenz sitzt Fachwissen neben Skepsis. Gute Texte werden dadurch genauer, nicht lauter.\n\nUnsere Autorinnen legen Beteiligungen und mögliche Interessenkonflikte offen. Unternehmen sehen Zitate, aber nicht unsere Bewertungen vor der Veröffentlichung.",
+                'text' => "## An editorial room built for disagreement\n\nKontur is produced in Hamburg, with correspondents in Berlin, Frankfurt, Munich, Brussels, and Zurich. Expertise sits beside scepticism in every conference. The result is more exact, not more dramatic.\n\nWriters disclose investments and potential conflicts of interest. Companies may check quotations, but they never preview our conclusions.",
             ]],
             ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
-                'title' => 'Das Team',
+                'title' => 'The fictional team',
                 'header' => 'row+col',
                 'table' => [
-                    ['Ressort', 'Verantwortung', 'Standort'],
-                    ['Chefredaktion', 'Mara Feld', 'Hamburg'],
-                    ['Wirtschaft', 'Jonas Ehrlich', 'Berlin'],
-                    ['Geld', 'Leila Osman', 'Frankfurt'],
-                    ['Immobilien', 'Hannah Voss', 'Hamburg'],
-                    ['Arbeit', 'Emre Aydin', 'München'],
+                    ['Desk', 'Editor', 'Base'],
+                    ['Editor in chief', 'Elara Venn', 'Hamburg'],
+                    ['Economy', 'Tomas Arden', 'Berlin'],
+                    ['Money', 'Nia Calder', 'Frankfurt'],
+                    ['Property', 'Mira Solven', 'Hamburg'],
+                    ['Work', 'Ivo Maren', 'Munich'],
                 ],
             ]],
-            ['id' => 'kontakt', 'type' => 'contact', 'group' => 'main', 'data' => [
-                'title' => 'Schreiben Sie der Redaktion',
+            ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
+                'text' => '**Demo notice:** Kontur, its staff, quoted experts, organisations, prices, and contact details are fictional. Any resemblance to real people or businesses is coincidental.',
+            ]],
+            ['id' => 'contact', 'type' => 'contact', 'group' => 'main', 'data' => [
+                'title' => 'Write to the editorial team',
             ]],
         ], $home );
 
@@ -147,7 +150,7 @@ class JournalDemo extends AbstractDemo
     {
         $section = $this->page( [
             'id' => $id,
-            'lang' => 'de',
+            'lang' => 'en',
             'name' => $name,
             'title' => $name . ' | Kontur',
             'path' => $path,
@@ -162,7 +165,7 @@ class JournalDemo extends AbstractDemo
                 'files' => [['id' => $this->img( $photo ), 'type' => 'file']],
             ]],
             ['id' => Utils::uid(), 'type' => 'blog', 'group' => 'main', 'data' => [
-                'title' => 'Aktuelle Analysen',
+                'title' => 'Latest analysis',
                 'layout' => 'default',
                 'limit' => 6,
                 'order' => '_lft',
@@ -172,14 +175,14 @@ class JournalDemo extends AbstractDemo
 
         foreach( $stories as $story )
         {
-            $rows = [['Beobachtung', 'Folge']];
+            $rows = [['Observation', 'Consequence']];
 
             foreach( $story['points'] as $point ) {
                 $rows[] = $point;
             }
 
             $this->page( [
-                'lang' => 'de',
+                'lang' => 'en',
                 'name' => $story['name'],
                 'title' => $story['title'],
                 'path' => $story['path'],
@@ -199,7 +202,7 @@ class JournalDemo extends AbstractDemo
                     'text' => $story['body'],
                 ]],
                 ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
-                    'title' => 'Worauf es ankommt',
+                    'title' => 'What matters',
                     'header' => 'row+col',
                     'table' => $rows,
                 ]],
@@ -220,62 +223,62 @@ class JournalDemo extends AbstractDemo
     protected function addSubscribe( Page $home ) : static
     {
         $this->page( [
-            'lang' => 'de',
-            'name' => 'Abo',
-            'title' => 'Kontur abonnieren',
-            'path' => 'abo',
+            'lang' => 'en',
+            'name' => 'Subscribe',
+            'title' => 'Subscribe to Kontur',
+            'path' => 'subscribe',
             'tag' => 'page',
             'type' => 'page',
             'status' => 1,
         ], [
             ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
-                'title' => 'Mehr Einordnung. Weniger Lärm.',
-                'subtitle' => 'Kontur Abo',
-                'text' => 'Lesen Sie alle Analysen im Web, das Monatsmagazin auf Papier oder das zusätzliche Freitagsbriefing der Redaktion.',
+                'title' => 'More context. Less noise.',
+                'subtitle' => 'Kontur subscriptions',
+                'text' => 'Read every analysis online, receive the monthly print edition, or add the editorial team’s Friday briefing.',
                 'files' => [['id' => $this->img( 'contract' ), 'type' => 'file']],
             ]],
             ['id' => Utils::uid(), 'type' => 'pricing', 'group' => 'main', 'data' => [
-                'title' => 'Wählen Sie Ihre Ausgabe',
-                'text' => 'Monatlich kündbar. Keine Anzeigen im Mitgliederbereich.',
+                'title' => 'Choose your edition',
+                'text' => 'Cancel monthly. No advertising in the member area. All plans and prices are fictional demo content.',
                 'items' => [
                     [
                         'name' => 'Digital',
-                        'price' => '7 €',
-                        'unit' => '/Monat',
-                        'text' => 'Für tägliche Leserinnen und Leser',
-                        'features' => "- Alle Artikel und Dossiers\n- Merkliste und Audiofassungen\n- Kontur am Morgen",
-                        'url' => 'mailto:abo@kontur.example?subject=Digital-Abo',
-                        'button' => 'Digital lesen',
+                        'price' => '€7',
+                        'unit' => '/month',
+                        'text' => 'For readers who visit every day',
+                        'features' => "- Every article and dossier\n- Reading list and audio editions\n- Kontur Morning",
+                        'url' => 'mailto:subscriptions@kontur.example?subject=Digital%20subscription',
+                        'button' => 'Read digitally',
                     ],
                     [
-                        'name' => 'Magazin',
-                        'price' => '12 €',
-                        'unit' => '/Monat',
-                        'text' => 'Die gedruckte Monatsausgabe',
-                        'features' => "- Magazin frei Haus\n- Voller Digitalzugang\n- Jahresregister",
-                        'url' => 'mailto:abo@kontur.example?subject=Magazin-Abo',
-                        'button' => 'Magazin bestellen',
+                        'name' => 'Magazine',
+                        'price' => '€12',
+                        'unit' => '/month',
+                        'text' => 'The monthly print edition',
+                        'features' => "- Magazine delivered to your door\n- Full digital access\n- Annual index",
+                        'url' => 'mailto:subscriptions@kontur.example?subject=Magazine%20subscription',
+                        'button' => 'Order the magazine',
                         'highlight' => true,
-                        'badge' => 'Meistgelesen',
+                        'badge' => 'Most popular',
                     ],
                     [
                         'name' => 'Briefing',
-                        'price' => '18 €',
-                        'unit' => '/Monat',
-                        'text' => 'Für Entscheider mit wenig Zeit',
-                        'features' => "- Magazin und Digitalzugang\n- Freitagsbriefing\n- Vier Redaktionsgespräche im Jahr",
-                        'url' => 'mailto:abo@kontur.example?subject=Briefing-Abo',
-                        'button' => 'Briefing wählen',
+                        'price' => '€18',
+                        'unit' => '/month',
+                        'text' => 'For decision-makers with limited time',
+                        'features' => "- Magazine and digital access\n- Friday briefing\n- Four editorial conversations each year",
+                        'url' => 'mailto:subscriptions@kontur.example?subject=Briefing%20subscription',
+                        'button' => 'Choose briefing',
                     ],
                 ],
             ]],
             ['id' => Utils::uid(), 'type' => 'questions', 'group' => 'main', 'data' => [
-                'title' => 'Fragen zum Abo',
+                'title' => 'Subscription questions',
                 'items' => [
-                    ['title' => 'Kann ich monatlich kündigen?', 'text' => 'Ja. Ihr Zugang läuft bis zum Ende des bereits bezahlten Monats weiter.'],
-                    ['title' => 'Gibt es ein Probeabo?', 'text' => 'Das Digitalabo kann vier Wochen kostenlos getestet werden. Es endet automatisch, wenn Sie nicht verlängern.'],
-                    ['title' => 'Wann erscheint das Magazin?', 'text' => 'Die neue Ausgabe erscheint am dritten Donnerstag jedes Monats und liegt meist am folgenden Werktag im Briefkasten.'],
-                    ['title' => 'Kann ich ein Abo verschenken?', 'text' => 'Ja. Geschenkabos laufen für drei, sechs oder zwölf Monate und verlängern sich nicht automatisch.'],
+                    ['title' => 'Can I cancel monthly?', 'text' => 'Yes. Access continues until the end of the month you have already paid for.'],
+                    ['title' => 'Is there a trial?', 'text' => 'The digital edition can be tested free for four weeks. It ends automatically unless you choose to continue.'],
+                    ['title' => 'When is the magazine published?', 'text' => 'The new edition appears on the third Thursday of each month and usually arrives on the next working day.'],
+                    ['title' => 'Can I give a subscription as a gift?', 'text' => 'Yes. Fictional gift subscriptions run for three, six, or twelve months and do not renew automatically.'],
                 ],
             ]],
         ], $home );
@@ -312,13 +315,13 @@ class JournalDemo extends AbstractDemo
     protected function articleHero( string $section, string $path ) : array
     {
         return ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
-            'title' => 'Weiterlesen in ' . $section,
+            'title' => 'Continue reading in ' . $section,
             'subtitle' => 'Kontur',
-            'text' => 'Analysen, Gespräche und Zahlen, die den Zusammenhang sichtbar machen.',
+            'text' => 'Analysis, conversations, and numbers that reveal the wider context.',
             'url' => '/' . $path,
-            'button' => 'Zum Ressort',
-            'url-alternative' => '/abo',
-            'button-alternative' => 'Kontur abonnieren',
+            'button' => 'Visit the section',
+            'url-alternative' => '/subscribe',
+            'button-alternative' => 'Subscribe to Kontur',
         ]];
     }
 
@@ -333,14 +336,14 @@ class JournalDemo extends AbstractDemo
         if( !isset( $this->element ) )
         {
             $cards = [
-                ['title' => 'Ressorts', 'text' => "- [Wirtschaft](/wirtschaft)\n- [Geld](/geld)\n- [Immobilien](/immobilien)\n- [Karriere](/karriere)"],
-                ['title' => 'Kontur', 'text' => "- [Über die Redaktion](/ueber-kontur)\n- [Kontakt](/ueber-kontur#kontakt)\n- [Abo](/abo)"],
-                ['title' => 'Briefings', 'text' => "- [Kontur am Morgen](/abo)\n- [Freitagsbriefing](/abo)\n- [Themen-Dossiers](/wirtschaft)"],
-                ['title' => 'Redaktion', 'text' => "- [redaktion@kontur.example](mailto:redaktion@kontur.example)\n- Hamburg · Berlin · Frankfurt"],
+                ['title' => 'Sections', 'text' => "- [Economy](/economy)\n- [Money](/money)\n- [Property](/property)\n- [Work](/work)"],
+                ['title' => 'Kontur', 'text' => "- [About the editors](/about-kontur)\n- [Contact](/about-kontur#contact)\n- [Subscribe](/subscribe)"],
+                ['title' => 'Briefings', 'text' => "- [Kontur Morning](/subscribe)\n- [Friday Briefing](/subscribe)\n- [Topic dossiers](/economy)"],
+                ['title' => 'Editorial', 'text' => "- [editorial@kontur.example](mailto:editorial@kontur.example)\n- Hamburg · Berlin · Frankfurt\n- Fictional demo publication"],
             ];
 
             $element = Element::forceCreate( [
-                'lang' => 'de',
+                'lang' => 'en',
                 'type' => 'cards',
                 'name' => 'Kontur Footer',
                 'data' => ['type' => 'cards', 'data' => ['cards' => $cards]],
@@ -348,14 +351,13 @@ class JournalDemo extends AbstractDemo
             ] );
 
             $version = $element->versions()->forceCreate( [
-                'lang' => 'de',
+                'lang' => 'en',
                 'data' => [
-                    'lang' => 'de',
+                    'lang' => 'en',
                     'type' => 'cards',
                     'name' => 'Kontur Footer',
                     'data' => ['cards' => $cards],
                 ],
-                'published' => true,
                 'editor' => 'demo',
             ] );
 
@@ -406,54 +408,57 @@ class JournalDemo extends AbstractDemo
 
         $content = [
             ['id' => Utils::uid(), 'type' => 'hero', 'group' => 'main', 'data' => [
-                'title' => 'Die Wirtschaft verändert sich. Wir zeigen, wohin.',
-                'subtitle' => 'Kontur | Ausgabe 04.26',
-                'text' => 'Reportagen, Analysen und Gespräche über Unternehmen, Geld und Arbeit—mit Ruhe für die Fakten und Blick für die Folgen.',
-                'url' => '/wirtschaft',
-                'button' => 'Aktuelle Analysen',
-                'url-alternative' => '/abo',
-                'button-alternative' => 'Ausgabe testen',
+                'title' => 'Business is changing. We show where it leads.',
+                'subtitle' => 'Kontur | Edition 04.26',
+                'text' => 'Reporting, analysis, and conversations about companies, money, and work—with time for the facts and attention to the consequences.',
+                'url' => '/economy',
+                'button' => 'Latest analysis',
+                'url-alternative' => '/subscribe',
+                'button-alternative' => 'Try an edition',
                 'files' => [['id' => $fileId, 'type' => 'file']],
             ]],
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
-                'title' => 'Heute wichtig',
+                'title' => 'What matters today',
                 'columns' => 4,
                 'cards' => [
-                    ['title' => 'Industrie ohne Blaupause', 'text' => "Fabriken müssen gleichzeitig sauberer, digitaler und unabhängiger werden. Der Umbau beginnt im laufenden Betrieb.\n\n[Analyse lesen](/industrie-ohne-blaupause)", 'file' => ['id' => $this->img( 'factory' ), 'type' => 'file']],
-                    ['title' => 'Wem gehört der Strom?', 'text' => "Die Energiewende braucht Netze, Speicher und Geduld. Beim Kapital dafür beginnt der eigentliche Konflikt.\n\n[Zum Energiedossier](/wem-gehoert-der-strom)", 'file' => ['id' => $this->img( 'wind' ), 'type' => 'file']],
-                    ['title' => 'Das Portfolio ohne Modetrends', 'text' => "Ein robustes Depot ist oft unspektakulär. Genau darin liegt seine Stärke, wenn die Börse unruhig wird.\n\n[Die Regeln ansehen](/das-portfolio-ohne-modetrends)", 'file' => ['id' => $this->img( 'market' ), 'type' => 'file']],
-                    ['title' => 'Wohnen wird wieder urban', 'text' => "Gemischte Quartiere und umgebaute Büros verändern die Stadt schneller als neue Siedlungen am Rand.\n\n[Reportage öffnen](/wohnen-wird-wieder-urban)", 'file' => ['id' => $this->img( 'architecture' ), 'type' => 'file']],
+                    ['title' => 'Industry without a blueprint', 'text' => "Factories must become cleaner, more digital, and more independent at once. The rebuild starts while production continues.\n\n[Read the industrial analysis](/industry-without-a-blueprint)", 'file' => ['id' => $this->img( 'factory' ), 'type' => 'file']],
+                    ['title' => 'Who owns the grid?', 'text' => "The energy transition needs networks, storage, and patience. The real conflict begins with the capital behind them.\n\n[Open the energy dossier](/who-owns-the-grid)", 'file' => ['id' => $this->img( 'wind' ), 'type' => 'file']],
+                    ['title' => 'The portfolio without fads', 'text' => "A resilient portfolio is often unremarkable. That becomes its strength when markets turn unsettled.\n\n[Review the portfolio rules](/the-portfolio-without-fads)", 'file' => ['id' => $this->img( 'market' ), 'type' => 'file']],
+                    ['title' => 'Housing returns to the city', 'text' => "Mixed neighbourhoods and converted offices are changing cities faster than new settlements at the edge.\n\n[Read the housing report](/housing-returns-to-the-city)", 'file' => ['id' => $this->img( 'architecture' ), 'type' => 'file']],
                 ],
             ]],
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
                 'file' => ['id' => $this->img( 'technology' ), 'type' => 'file'],
                 'position' => 'end',
                 'ratio' => '1-2',
-                'text' => "## Der neue Industrieatlas\n\nWo entstehen Batterien, Chips, Wärmepumpen und Rechenzentren? Kontur verfolgt 180 Investitionsprojekte und zeigt, welche Regionen vom Umbau profitieren—und wo Netze, Flächen oder Fachkräfte fehlen.\n\nDie interaktive Karte verbindet angekündigte Milliarden mit sichtbaren Baufortschritten. Denn ein Spatenstich ist noch keine Fabrik.\n\n[Den Industrieatlas einordnen](/industrie-ohne-blaupause)",
+                'text' => "## The new industrial atlas\n\nWhere are batteries, chips, heat pumps, and data centres being built? Kontur tracks 180 fictional investment projects to show which regions benefit—and where grids, land, or skilled workers are missing.\n\nThe imagined interactive map connects announced billions with visible building progress. A groundbreaking ceremony is not a factory.\n\n[Explore the industrial atlas story](/industry-without-a-blueprint)",
             ]],
             ['id' => Utils::uid(), 'type' => 'blog', 'group' => 'main', 'data' => [
-                'title' => 'Wirtschaft im Zusammenhang',
+                'title' => 'The economy in context',
                 'layout' => 'default',
                 'limit' => 2,
                 'order' => '_lft',
-                'parent-page' => ['value' => $sections['wirtschaft'], 'label' => 'Wirtschaft'],
+                'parent-page' => ['value' => $sections['economy'], 'label' => 'Economy'],
             ]],
             ['id' => Utils::uid(), 'type' => 'cards', 'group' => 'main', 'data' => [
-                'title' => 'Geld, das zu Ihrem Leben passt',
+                'title' => 'Money that fits your life',
                 'columns' => 3,
                 'cards' => [
-                    ['title' => 'Zinsen neu sortieren', 'text' => "Tagesgeld, Anleihen, Kredite: Die alte Nullzinslogik gilt nicht mehr.\n\n[Was sich verändert](/was-zinsen-wirklich-veraendern)", 'file' => ['id' => $this->img( 'contract' ), 'type' => 'file']],
-                    ['title' => 'Langfristig schlägt laut', 'text' => "Warum Sparregeln mehr bewirken als die nächste heiße Aktie.\n\n[Portfolio aufräumen](/das-portfolio-ohne-modetrends)", 'file' => ['id' => $this->img( 'savings' ), 'type' => 'file']],
-                    ['title' => 'Sanieren in der richtigen Reihenfolge', 'text' => "Erst messen, dann planen, zuletzt bauen: So bleiben Kosten und Komfort im Blick.\n\n[Sanierungsplan lesen](/sanieren-mit-plan)", 'file' => ['id' => $this->img( 'home' ), 'type' => 'file']],
+                    ['title' => 'Rethinking interest', 'text' => "Cash, bonds, loans: the old logic of zero rates no longer applies.\n\n[See what interest rates change](/what-interest-rates-change)", 'file' => ['id' => $this->img( 'contract' ), 'type' => 'file']],
+                    ['title' => 'Quiet beats fashionable', 'text' => "Why consistent saving rules matter more than the next popular stock.\n\n[Reset the portfolio](/the-portfolio-without-fads)", 'file' => ['id' => $this->img( 'savings' ), 'type' => 'file']],
+                    ['title' => 'Renovate in the right order', 'text' => "Measure first, plan second, build last: a sequence that keeps cost and comfort visible.\n\n[Read the renovation plan](/renovating-in-the-right-order)", 'file' => ['id' => $this->img( 'home' ), 'type' => 'file']],
                 ],
             ]],
             ['id' => Utils::uid(), 'type' => 'testimonial', 'group' => 'main', 'data' => [
-                'title' => 'Stimmen aus der Wirtschaft',
+                'title' => 'Fictional voices from business',
                 'items' => [
-                    ['name' => 'Dr. Nika Salem', 'role' => 'Energieökonomin', 'text' => 'Die schwierige Frage ist nicht, ob wir investieren. Es geht darum, wer welches Risiko über zwanzig Jahre trägt.'],
-                    ['name' => 'Arne Lorenz', 'role' => 'Familienunternehmer', 'text' => 'Transformation klingt nach Projekt. In der Produktion ist sie eine Folge sehr konkreter Entscheidungen an jedem Montagmorgen.'],
-                    ['name' => 'Miriam Paul', 'role' => 'Stadtplanerin', 'text' => 'Wohnraum entsteht schneller, wenn wir bestehende Gebäude als Material begreifen und nicht als Hindernis.'],
+                    ['name' => 'Dr. Sera Vale', 'role' => 'Energy economist · fictional', 'text' => 'The difficult question is not whether to invest. It is who carries which risk across the next twenty years.'],
+                    ['name' => 'Milo Kern', 'role' => 'Family business owner · fictional', 'text' => 'Transformation sounds like a project. In production, it is a series of practical decisions made every Monday morning.'],
+                    ['name' => 'Talia Brenn', 'role' => 'Urban planner · fictional', 'text' => 'Housing arrives faster when we treat existing buildings as material rather than as obstacles.'],
                 ],
+            ]],
+            ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
+                'text' => '*Kontur and every named person, quotation, organisation, price, and contact detail in this demo are fictional.*',
             ]],
             ['id' => Utils::uid(), 'type' => 'heading', 'group' => 'footer', 'data' => ['level' => 2, 'title' => 'Kontur']],
             ['type' => 'reference', 'refid' => $elementId, 'group' => 'footer'],
@@ -461,20 +466,20 @@ class JournalDemo extends AbstractDemo
 
         $meta = [
             'meta-tags' => Validation::entry( 'meta-tags', [
-                'description' => 'Kontur ist ein unabhängiges Wirtschaftsjournal mit Reportagen und Analysen zu Unternehmen, Geld, Immobilien und Arbeit.',
-                'keywords' => 'Wirtschaftsjournal, Unternehmen, Geldanlage, Immobilien, Karriere, Analysen',
+                'description' => 'Kontur is a fictional independent business journal with reporting and analysis on companies, money, property, and work.',
+                'keywords' => 'business journal, companies, investing, property, work, analysis',
             ], 'meta' ),
             'social-media' => Validation::entry( 'social-media', [
-                'title' => 'Kontur | Wirtschaft im Zusammenhang',
-                'description' => 'Reportagen, Analysen und Gespräche über Unternehmen, Geld und Arbeit—gründlich recherchiert und verständlich geschrieben.',
+                'title' => 'Kontur | Business in context',
+                'description' => 'Reporting, analysis, and conversations about companies, money, and work—carefully researched and clearly written.',
                 'file' => ['id' => $fileId, 'type' => 'file'],
             ], 'meta' ),
         ];
 
         $page = Page::forceCreate( [
-            'lang' => 'de',
-            'name' => 'Start',
-            'title' => 'Kontur | Wirtschaft im Zusammenhang',
+            'lang' => 'en',
+            'name' => 'Home',
+            'title' => 'Kontur | Business in context',
             'path' => '',
             'tag' => 'root',
             'theme' => $this->theme,
@@ -487,10 +492,10 @@ class JournalDemo extends AbstractDemo
         ] );
 
         $version = $page->versions()->forceCreate( [
-            'lang' => 'de',
+            'lang' => 'en',
             'data' => [
-                'name' => 'Start',
-                'title' => 'Kontur | Wirtschaft im Zusammenhang',
+                'name' => 'Home',
+                'title' => 'Kontur | Business in context',
                 'path' => '',
                 'tag' => 'root',
                 'domain' => '',
@@ -503,7 +508,6 @@ class JournalDemo extends AbstractDemo
                 'meta' => $meta,
                 'content' => $content,
             ],
-            'published' => true,
             'editor' => 'demo',
         ] );
 
@@ -552,7 +556,7 @@ class JournalDemo extends AbstractDemo
     protected function img( string $key ) : string
     {
         [$photo, $name, $desc] = self::PHOTOS[$key];
-        return $this->image( $photo, $name, $desc, 'de' );
+        return $this->image( $photo, $name, $desc, 'en' );
     }
 
 
@@ -567,8 +571,8 @@ class JournalDemo extends AbstractDemo
         {
             $svg = <<<'SVG'
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 96" role="img" aria-labelledby="title desc">
-  <title id="title">Kontur Logo</title>
-  <desc id="desc">Kontur Wortmarke mit goldener Akzentlinie</desc>
+  <title id="title">Kontur logo</title>
+  <desc id="desc">Kontur wordmark with a gold accent line</desc>
   <rect x="2" y="16" width="10" height="64" fill="#9A7112"/>
   <text x="30" y="68" fill="#1F1E1C" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="700" letter-spacing="-3">KONTUR</text>
   <path d="M32 80h354" stroke="#9A7112" stroke-width="3"/>
@@ -585,18 +589,17 @@ SVG;
 
             $data = [
                 'mime' => 'image/svg+xml',
-                'lang' => 'de',
-                'name' => 'Kontur Logo',
+                'lang' => 'en',
+                'name' => 'Kontur logo',
                 'path' => $path,
                 'previews' => ['500' => $path],
-                'description' => ['de' => 'Kontur Wortmarke mit goldener Akzentlinie'],
+                'description' => ['en' => 'Kontur wordmark with a gold accent line'],
             ];
 
             $file = File::forceCreate( $data + ['editor' => 'demo'] );
             $version = $file->versions()->forceCreate( [
-                'lang' => 'de',
+                'lang' => 'en',
                 'data' => $data,
-                'published' => true,
                 'editor' => 'demo',
             ] );
 
@@ -628,7 +631,7 @@ SVG;
         $meta = $data['meta'] ?? $meta ?: [
             'meta-tags' => Validation::entry( 'meta-tags', [
                 'description' => $description,
-                'keywords' => 'Kontur, Wirtschaftsjournal, Unternehmen, Geld, Immobilien, Karriere',
+                'keywords' => 'Kontur, business journal, companies, investing, property, work',
             ], 'meta' ),
             'social-media' => Validation::entry( 'social-media', [
                 'title' => $data['title'] ?? '',
@@ -649,13 +652,12 @@ SVG;
         $page->appendToNode( $parent )->save();
 
         $version = $page->versions()->forceCreate( [
-            'lang' => $data['lang'] ?? 'de',
+            'lang' => $data['lang'] ?? 'en',
             'data' => array_diff_key( $data, ['content' => 1, 'meta' => 1, 'id' => 1] ) + [
                 'domain' => '',
                 'theme' => $this->theme,
             ],
             'aux' => ['meta' => $meta, 'content' => $content],
-            'published' => true,
             'editor' => 'demo',
         ] );
 
@@ -675,179 +677,179 @@ SVG;
     protected function pages() : void
     {
         $sections = [
-            'wirtschaft' => (string) Str::uuid7(),
-            'geld' => (string) Str::uuid7(),
-            'immobilien' => (string) Str::uuid7(),
-            'karriere' => (string) Str::uuid7(),
+            'economy' => (string) Str::uuid7(),
+            'money' => (string) Str::uuid7(),
+            'property' => (string) Str::uuid7(),
+            'work' => (string) Str::uuid7(),
         ];
         $home = $this->home( $sections );
 
         $this->addSection(
             $home,
-            $sections['wirtschaft'],
-            'Wirtschaft',
-            'wirtschaft',
-            'Unternehmen unter Druck. Ideen im Aufbruch.',
-            'Wir begleiten den Umbau der Industrie, neue Energiemärkte und einen Mittelstand, der seine Stärke nicht aus Schlagzeilen bezieht.',
+            $sections['economy'],
+            'Economy',
+            'economy',
+            'Companies under pressure. Ideas in motion.',
+            'We follow the reinvention of industry, new energy markets, and independent companies whose strength does not come from headlines.',
             'factory',
             [
                 [
-                    'name' => 'Industrie ohne Blaupause',
-                    'title' => 'Industrie ohne Blaupause: Umbau im laufenden Betrieb',
-                    'path' => 'industrie-ohne-blaupause',
+                    'name' => 'Industry without a blueprint',
+                    'title' => 'Industry without a blueprint: Rebuilding while production runs',
+                    'path' => 'industry-without-a-blueprint',
                     'photo' => 'factory',
                     'second' => 'technology',
-                    'intro' => "Die deutsche Industrie soll klimaneutraler, digitaler und unabhängiger werden—gleichzeitig. In den Werkhallen ist daraus kein Masterplan geworden, sondern eine Folge harter Entscheidungen über Maschinen, Energie und Menschen.",
-                    'heading' => 'Investieren, bevor Gewissheit da ist',
-                    'body' => "## Neue Technik trifft alte Abhängigkeiten\n\nEine Produktionslinie läuft zwanzig Jahre. Wer heute eine Anlage ersetzt, legt sich auf Energiepreise, Software und Lieferanten fest, die niemand zuverlässig vorhersagen kann. Erfolgreiche Betriebe teilen den Umbau deshalb in kleine, messbare Schritte.\n\nSie beginnen dort, wo Verbrauchsdaten fehlen, Abwärme ungenutzt bleibt oder ein einzelnes Bauteil die gesamte Linie abhängig macht.",
+                    'intro' => "Industry is expected to become climate-neutral, digital, and more independent—all at once. On the factory floor, that has produced no master plan, only a series of difficult decisions about machines, energy, and people.",
+                    'heading' => 'Investing before certainty arrives',
+                    'body' => "## New technology meets old dependencies\n\nA production line runs for twenty years. Replacing one today means committing to energy prices, software, and suppliers that nobody can predict with confidence. Strong operators divide the transition into small, measurable steps.\n\nThey begin where consumption data is missing, waste heat is unused, or one component makes the entire line dependent on a single source.",
                     'points' => [
-                        ['Energie wird einzeln gemessen', 'Investitionen lassen sich nach tatsächlichem Verbrauch priorisieren'],
-                        ['Anlagen bleiben modular', 'Technik kann ausgetauscht werden, ohne die ganze Linie stillzulegen'],
-                        ['Beschäftigte testen früh', 'Fehler werden sichtbar, bevor Prozesse im großen Maßstab wechseln'],
+                        ['Energy is measured separately', 'Investment can follow actual consumption rather than estimates'],
+                        ['Equipment remains modular', 'Technology can be replaced without shutting down the entire line'],
+                        ['Employees test early', 'Problems appear before processes change at full scale'],
                     ],
-                    'close' => 'Transformation ist kein Zustand nach dem Projekt. Sie wird zur Fähigkeit, Technik und Abläufe regelmäßig zu verändern, ohne Qualität und Lieferfähigkeit zu verlieren.',
+                    'close' => 'Transformation is not a state reached after a project. It becomes the ability to change technology and operations repeatedly without losing quality or reliability.',
                 ],
                 [
-                    'name' => 'Wem gehört der Strom?',
-                    'title' => 'Wem gehört der Strom? Der Kampf um Netze und Speicher',
-                    'path' => 'wem-gehoert-der-strom',
+                    'name' => 'Who owns the grid?',
+                    'title' => 'Who owns the grid? The contest for networks and storage',
+                    'path' => 'who-owns-the-grid',
                     'photo' => 'wind',
                     'second' => 'architecture',
-                    'intro' => "Wind- und Solarparks liefern immer öfter günstigen Strom. Doch zwischen Erzeugung und Verbrauch fehlen Leitungen, Speicher und flexible Tarife. Genau dort entscheidet sich, wer an der Energiewende verdient.",
-                    'heading' => 'Die Rendite liegt in der Verbindung',
-                    'body' => "## Infrastruktur braucht lange Zusagen\n\nEin Batteriespeicher kann in zwei Jahren stehen. Eine neue Stromtrasse braucht oft ein Jahrzehnt. Kommunen, Netzbetreiber, Industrie und Anleger rechnen deshalb mit völlig verschiedenen Zeiträumen.\n\nNeue Modelle teilen Erlöse aus Netzentlastung, Stromhandel und Reserveleistung. Entscheidend ist, dass Risiken offen verteilt werden und nicht erst bei der ersten Engpassstunde auftauchen.",
+                    'intro' => "Wind and solar farms increasingly produce inexpensive electricity. Yet the system between production and consumption still lacks lines, storage, and flexible tariffs. That gap will decide who earns from the energy transition.",
+                    'heading' => 'The return lies in the connection',
+                    'body' => "## Infrastructure needs long commitments\n\nA battery facility can be completed in two years. A new transmission line may take a decade. Municipalities, network operators, industry, and investors therefore work to completely different clocks.\n\nNew models combine revenue from easing congestion, trading power, and providing reserve capacity. The essential step is to distribute risk openly before the first hour of shortage.",
                     'points' => [
-                        ['Speicher reagieren in Sekunden', 'Sie stabilisieren Preise, ersetzen aber kein belastbares Netz'],
-                        ['Netze werden lokal knapp', 'Standort und Anschluss sind wertvoller als reine Erzeugungsleistung'],
-                        ['Industrie wird flexibler', 'Verbrauch verschiebt sich in Stunden mit reichlich Strom'],
+                        ['Storage responds in seconds', 'It stabilises prices but cannot replace a resilient network'],
+                        ['Networks become scarce locally', 'Location and access can matter more than generation capacity'],
+                        ['Industry becomes flexible', 'Demand moves towards hours with abundant electricity'],
                     ],
-                    'close' => 'Die Energiewende wird nicht allein auf Feldern und Dächern gebaut. Ihr ökonomischer Kern liegt in den unsichtbaren Verbindungen dazwischen.',
+                    'close' => 'The energy transition is not built only on fields and rooftops. Its economic core lies in the invisible connections between them.',
                 ],
             ]
         )->addSection(
             $home,
-            $sections['geld'],
-            'Geld',
-            'geld',
-            'Vermögen braucht Regeln, keine Vorhersagen.',
-            'Wir erklären Zinsen, Märkte und Vorsorge so, dass Entscheidungen auch dann tragen, wenn die Schlagzeile von morgen anders ausfällt.',
+            $sections['money'],
+            'Money',
+            'money',
+            'Wealth needs rules, not predictions.',
+            'We explain interest rates, markets, and long-term planning so decisions can endure even when tomorrow’s headline changes.',
             'market',
             [
                 [
-                    'name' => 'Das Portfolio ohne Modetrends',
-                    'title' => 'Das Portfolio ohne Modetrends',
-                    'path' => 'das-portfolio-ohne-modetrends',
+                    'name' => 'The portfolio without fads',
+                    'title' => 'The portfolio without fads',
+                    'path' => 'the-portfolio-without-fads',
                     'photo' => 'market',
                     'second' => 'savings',
-                    'intro' => "Ein gutes Depot muss nicht jede Zukunftswette enthalten. Es braucht eine breite Basis, verlässliche Kosten und Regeln für den Moment, in dem die Kurse fallen und der eigene Plan plötzlich alt wirkt.",
-                    'heading' => 'Einfach heißt nicht gedankenlos',
-                    'body' => "## Erst das Ziel, dann das Produkt\n\nWer in zehn Jahren eine Wohnung kaufen will, braucht einen anderen Aktienanteil als jemand mit dreißig Jahren bis zur Rente. Die passende Mischung beginnt deshalb mit Zeit, Rücklagen und Verlusttoleranz.\n\nErst danach kommen ETFs, Anleihen oder Tagesgeld. Produkte sind Werkzeuge. Kein Ticker kann eine unklare Entscheidung reparieren.",
+                    'intro' => "A sound portfolio does not need every bet on the future. It needs a broad foundation, dependable costs, and rules for the moment prices fall and the plan suddenly feels outdated.",
+                    'heading' => 'Simple does not mean thoughtless',
+                    'body' => "## The goal comes before the product\n\nSomeone buying a home in ten years needs a different allocation from someone with thirty years until retirement. The right mix starts with time, reserves, and tolerance for loss.\n\nOnly then come ETFs, bonds, or cash accounts. Products are tools. No ticker can repair an unclear decision.",
                     'points' => [
-                        ['Ein Welt-ETF bildet den Kern', 'Regionale Wetten bleiben klein und bewusst'],
-                        ['Die Reserve liegt separat', 'Ein Börsenminus erzwingt keinen Verkauf für laufende Ausgaben'],
-                        ['Einmal pro Jahr wird geprüft', 'Handeln folgt einer Regel und nicht der Stimmung'],
+                        ['A global ETF forms the core', 'Regional bets remain small and deliberate'],
+                        ['The cash reserve stays separate', 'A market fall does not force sales to cover current costs'],
+                        ['The plan is reviewed once a year', 'Action follows a rule instead of a mood'],
                     ],
-                    'close' => 'Ein robustes Portfolio fühlt sich in guten Jahren manchmal langweilig an. In schlechten Jahren zeigt sich, warum genau das ein Vorteil ist.',
+                    'close' => 'A resilient portfolio can feel dull in good years. Difficult years reveal why that is an advantage.',
                 ],
                 [
-                    'name' => 'Was Zinsen wirklich verändern',
-                    'title' => 'Was Zinsen wirklich verändern',
-                    'path' => 'was-zinsen-wirklich-veraendern',
+                    'name' => 'What interest rates change',
+                    'title' => 'What interest rates really change',
+                    'path' => 'what-interest-rates-change',
                     'photo' => 'contract',
                     'second' => 'home',
-                    'intro' => "Zinsen sind zurück, aber nicht für alle im gleichen Maß. Sparer erhalten wieder Ertrag, Kredite bleiben teuer und viele Verträge reagieren langsamer als der Leitzins.",
-                    'heading' => 'Jede Laufzeit hat ihren Preis',
-                    'body' => "## Sicherheit ist wieder sichtbar bepreist\n\nTagesgeld bleibt flexibel, kann aber schnell weniger abwerfen. Festgeld bindet Kapital. Anleihen schwanken im Kurs, wenn sich Marktzinsen bewegen. Wer nur auf den höchsten Prozentwert schaut, übersieht oft die Laufzeit und den Zugriff.\n\nBei Krediten lohnt der gleiche Blick: Sondertilgung, Zinsbindung und Restschuld sind wichtiger als ein einzelner Vergleichszins.",
+                    'intro' => "Interest has returned, but not equally for everyone. Savers can earn a return again, borrowing remains expensive, and many contracts react more slowly than central-bank rates.",
+                    'heading' => 'Every term has a price',
+                    'body' => "## Safety has a visible price again\n\nEasy-access cash remains flexible, but its yield can fall quickly. Fixed deposits lock capital away. Bond prices move when market rates change. Looking only at the highest percentage often hides the term and the limits on access.\n\nLoans deserve the same attention: overpayments, fixed-rate periods, and the remaining balance matter more than a single comparison rate.",
                     'points' => [
-                        ['Liquidität hat einen Wert', 'Nicht jeder Euro sollte für den höchsten Zins gebunden werden'],
-                        ['Lange Bindung schafft Ruhe', 'Sie kann teuer sein, wenn die persönliche Planung unsicher bleibt'],
-                        ['Schulden werden neu bewertet', 'Sichere Tilgung konkurriert wieder ernsthaft mit der Geldanlage'],
+                        ['Liquidity has value', 'Not every euro should be locked away for the highest rate'],
+                        ['Long terms create calm', 'They can be costly when personal plans remain uncertain'],
+                        ['Debt is repriced', 'Guaranteed repayment competes seriously with investing again'],
                     ],
-                    'close' => 'Das neue Zinsniveau verlangt keine spektakuläre Strategie. Es belohnt, wer Verträge, Laufzeiten und die eigene Flexibilität sauber nebeneinanderlegt.',
+                    'close' => 'The new rate environment does not demand a spectacular strategy. It rewards anyone who compares contracts, terms, and personal flexibility carefully.',
                 ],
             ]
         )->addSection(
             $home,
-            $sections['immobilien'],
-            'Immobilien',
-            'immobilien',
-            'Bauen ist teuer. Bestehendes wird kostbar.',
-            'Kontur untersucht, wie Städte wachsen, Gebäude weitergenutzt werden und Eigentümer Sanierungen finanzierbar organisieren.',
+            $sections['property'],
+            'Property',
+            'property',
+            'Building is expensive. What already exists is becoming precious.',
+            'Kontur examines how cities grow, buildings find new uses, and owners organise renovation without losing control of the cost.',
             'architecture',
             [
                 [
-                    'name' => 'Wohnen wird wieder urban',
-                    'title' => 'Wohnen wird wieder urban',
-                    'path' => 'wohnen-wird-wieder-urban',
+                    'name' => 'Housing returns to the city',
+                    'title' => 'Housing returns to the city',
+                    'path' => 'housing-returns-to-the-city',
                     'photo' => 'city',
                     'second' => 'architecture',
-                    'intro' => "Neue Wohnungen entstehen nicht nur auf freiem Feld. Leere Büros, Parkplätze und eingeschossige Märkte werden zu Bauland mitten in der Stadt—wenn Planung und Eigentümer zusammenfinden.",
-                    'heading' => 'Die zweite Chance der Bestandsstadt',
-                    'body' => "## Umbau spart nicht automatisch Geld\n\nBestehende Tragwerke, Leitungen und Schadstoffe machen Projekte kompliziert. Gleichzeitig sind Straßen, Schulen und Nahverkehr oft schon vorhanden. Die Bilanz wird gut, wenn Planer früh prüfen, was bleiben kann und welche Nutzung zum Gebäude passt.\n\nKleine Grundrisse, gemeinschaftliche Räume und gemischte Erdgeschosse schaffen mehr Wohnwert als reine Quadratmetermaximierung.",
+                    'intro' => "New homes do not appear only on open land. Empty offices, car parks, and single-storey shops are becoming building sites within the city—when planners and owners can align.",
+                    'heading' => 'A second chance for the existing city',
+                    'body' => "## Conversion does not automatically save money\n\nExisting structures, services, and hazardous materials make projects complicated. Roads, schools, and public transport, however, are often already present. The equation improves when planners identify early what can remain and which use suits the building.\n\nSmaller homes, shared rooms, and mixed ground floors create more value than maximising floor area alone.",
                     'points' => [
-                        ['Bürotiefen werden geprüft', 'Nicht jedes Raster eignet sich für belichtete Wohnungen'],
-                        ['Erdgeschosse bleiben flexibel', 'Läden, Praxen und Arbeit beleben das Quartier'],
-                        ['Parkflächen werden geteilt', 'Mehr Fläche bleibt für Wohnungen und Grün'],
+                        ['Office depths are tested', 'Not every structural grid can provide well-lit homes'],
+                        ['Ground floors remain flexible', 'Shops, clinics, and workplaces bring life to the neighbourhood'],
+                        ['Parking is shared', 'More space remains available for homes and greenery'],
                     ],
-                    'close' => 'Die Stadt der Zukunft wird selten komplett neu gebaut. Sie entsteht in den Zwischenräumen, Aufstockungen und Umnutzungen der Gegenwart.',
+                    'close' => 'The city of the future will rarely be entirely new. It will emerge from today’s gaps, extensions, and conversions.',
                 ],
                 [
-                    'name' => 'Sanieren mit Plan',
-                    'title' => 'Sanieren mit Plan: Erst verstehen, dann bauen',
-                    'path' => 'sanieren-mit-plan',
+                    'name' => 'Renovating in the right order',
+                    'title' => 'Renovating in the right order: Understand first, then build',
+                    'path' => 'renovating-in-the-right-order',
                     'photo' => 'home',
                     'second' => 'construction',
-                    'intro' => "Fenster, Heizung, Dach, Fassade: Wer alles gleichzeitig denkt, verliert schnell den Überblick. Eine gute Sanierung beginnt mit dem Gebäude und einer Reihenfolge, die spätere Arbeiten nicht wieder zerstört.",
-                    'heading' => 'Das Haus als System lesen',
-                    'body' => "## Messen vor dem Angebot\n\nVerbrauchsdaten, Wärmebilder und eine Bestandsaufnahme zeigen, wo Energie tatsächlich verloren geht. Erst dann lässt sich entscheiden, ob eine kleinere Heizung genügt, welche Bauteile zusammengehören und wann Bewohner ausweichen müssen.\n\nFörderung gehört in den Finanzplan, sollte aber keine Maßnahme rechtfertigen, die technisch wenig bewirkt.",
+                    'intro' => "Windows, heating, roof, facade: considering everything at once quickly becomes overwhelming. A good renovation starts with the building and a sequence that later work will not undo.",
+                    'heading' => 'Read the house as a system',
+                    'body' => "## Measure before requesting a quote\n\nConsumption data, thermal images, and a building survey reveal where energy is actually lost. Only then is it possible to decide whether a smaller heating system will work, which components belong together, and when residents may need to move out temporarily.\n\nSubsidies belong in the financial plan, but they should not justify a measure with little technical value.",
                     'points' => [
-                        ['Die Hülle kommt vor der Heizung', 'Der spätere Wärmebedarf bestimmt die richtige Leistung'],
-                        ['Feuchtigkeit wird mitgedacht', 'Dichte Fenster brauchen ein belastbares Lüftungskonzept'],
-                        ['Etappen folgen einem Zielbild', 'Jeder Bauabschnitt bereitet den nächsten vor'],
+                        ['The envelope comes before heating', 'Future heat demand determines the right capacity'],
+                        ['Moisture is considered throughout', 'Airtight windows require a dependable ventilation plan'],
+                        ['Stages follow one target', 'Every phase prepares the building for the next'],
                     ],
-                    'close' => 'Eine Sanierung ist dann gelungen, wenn Kosten, Komfort und Technik auch zehn Jahre später noch zusammenpassen.',
+                    'close' => 'A renovation succeeds when cost, comfort, and technology still work together ten years later.',
                 ],
             ]
         )->addSection(
             $home,
-            $sections['karriere'],
-            'Karriere',
-            'karriere',
-            'Gute Arbeit entsteht nicht im Dauerlauf.',
-            'Wir sprechen über Führung, Konzentration und Organisation—ohne die Verantwortung für schlechte Strukturen beim Einzelnen abzuladen.',
+            $sections['work'],
+            'Work',
+            'work',
+            'Good work is not produced at a permanent sprint.',
+            'We examine leadership, concentration, and organisation without making individuals responsible for broken structures.',
             'team',
             [
                 [
-                    'name' => 'Produktivität braucht Ruhe',
-                    'title' => 'Produktivität braucht Ruhe',
-                    'path' => 'produktivitaet-braucht-ruhe',
+                    'name' => 'Productivity needs quiet',
+                    'title' => 'Productivity needs quiet',
+                    'path' => 'productivity-needs-quiet',
                     'photo' => 'desk',
                     'second' => 'team',
-                    'intro' => "Viele Unternehmen messen Aktivität und hoffen auf Leistung. Doch konzentrierte Arbeit entsteht erst, wenn Kalender, Zuständigkeiten und digitale Werkzeuge eine Aufgabe schützen statt sie ständig zu unterbrechen.",
-                    'heading' => 'Zeit ist Teil der Infrastruktur',
-                    'body' => "## Fokus lässt sich organisieren\n\nZwei meetingfreie Vormittage helfen mehr als ein weiterer Kurs zum Zeitmanagement. Klare Entscheidungswege verhindern, dass jede Frage in fünf Chats landet. Teams mit verlässlicher Ruhezeit arbeiten nicht weniger zusammen—sie kommen nur besser vorbereitet zusammen.\n\nDie wichtigste Kennzahl ist nicht die Zahl gesendeter Nachrichten, sondern die Zeit bis zu einer guten Entscheidung.",
+                    'intro' => "Many companies measure activity and hope for performance. Focused work begins only when calendars, responsibilities, and digital tools protect a task instead of interrupting it.",
+                    'heading' => 'Time is part of the infrastructure',
+                    'body' => "## Focus can be organised\n\nTwo meeting-free mornings do more than another time-management course. Clear decision paths stop every question from landing in five chats. Teams with dependable quiet time do not collaborate less—they arrive better prepared.\n\nThe important measure is not the number of messages sent, but the time required to reach a sound decision.",
                     'points' => [
-                        ['Kalender haben gemeinsame Regeln', 'Konzentrierte Zeit wird nicht bei jeder Anfrage neu verhandelt'],
-                        ['Entscheidungen haben Eigentümer', 'Fragen kreisen nicht zwischen Gruppen ohne Mandat'],
-                        ['Status wird schriftlich geteilt', 'Meetings bleiben für Konflikte, Ideen und echte Abwägungen'],
+                        ['Calendars share common rules', 'Focused time is not renegotiated with every request'],
+                        ['Decisions have owners', 'Questions do not circle between groups without a mandate'],
+                        ['Status is shared in writing', 'Meetings remain available for conflict, ideas, and real judgement'],
                     ],
-                    'close' => 'Ruhe ist kein Bonus für wenige. Sie ist eine betriebliche Voraussetzung für Arbeit, die Urteil, Sorgfalt und Verantwortung verlangt.',
+                    'close' => 'Quiet is not a benefit reserved for a few. It is an operating condition for work that requires judgement, care, and responsibility.',
                 ],
                 [
-                    'name' => 'Führen ohne Bühne',
-                    'title' => 'Führen ohne Bühne',
-                    'path' => 'fuehren-ohne-buehne',
+                    'name' => 'Leadership without the stage',
+                    'title' => 'Leadership without the stage',
+                    'path' => 'leadership-without-the-stage',
                     'photo' => 'portrait',
                     'second' => 'boardroom',
-                    'intro' => "Sichtbarkeit kann Orientierung geben. Dauerpräsenz ersetzt jedoch keine Entscheidung. Gute Führung zeigt sich oft dort, wo Rollen geklärt, Konflikte bearbeitet und andere Menschen handlungsfähig werden.",
-                    'heading' => 'Verantwortung wird konkret',
-                    'body' => "## Klarheit vor Charisma\n\nBeschäftigte brauchen keine perfekte Persönlichkeit an der Spitze. Sie brauchen nachvollziehbare Prioritäten, Schutz vor widersprüchlichen Aufträgen und eine Führungskraft, die Fehler nicht nach unten weiterreicht.\n\nWer gut führt, baut eine Organisation, die auch während der eigenen Abwesenheit vernünftige Entscheidungen treffen kann.",
+                    'intro' => "Visibility can provide direction. Constant presence cannot replace a decision. Good leadership often appears where roles become clear, conflicts are addressed, and other people gain room to act.",
+                    'heading' => 'Responsibility becomes concrete',
+                    'body' => "## Clarity before charisma\n\nEmployees do not need a perfect personality at the top. They need understandable priorities, protection from contradictory instructions, and a leader who does not pass mistakes down the hierarchy.\n\nA good leader builds an organisation that can still make sensible decisions in their absence.",
                     'points' => [
-                        ['Prioritäten werden begründet', 'Teams verstehen, was warten darf und warum'],
-                        ['Konflikte werden früh benannt', 'Sachliche Differenzen werden nicht zu persönlicher Unsicherheit'],
-                        ['Erfolg wird verteilt', 'Verantwortung und Anerkennung liegen bei den Menschen, die die Arbeit tragen'],
+                        ['Priorities are explained', 'Teams understand what can wait and why'],
+                        ['Conflict is named early', 'Professional differences do not become personal uncertainty'],
+                        ['Success is distributed', 'Responsibility and credit stay with the people doing the work'],
                     ],
-                    'close' => 'Führung ohne Bühne ist nicht unsichtbar. Sie wird an der Qualität der Entscheidungen und an der Selbstständigkeit des Teams erkennbar.',
+                    'close' => 'Leadership without a stage is not invisible. It can be seen in the quality of decisions and the independence of the team.',
                 ],
             ]
         )->addAbout( $home )

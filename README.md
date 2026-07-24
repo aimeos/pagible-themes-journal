@@ -22,13 +22,13 @@ php artisan vendor:publish --tag=cms-theme
 
 ## Demo
 
-The package includes `Database\Seeders\JournalDemo`, a complete fictional English-language business publication named **Kontur**:
+The package includes `Database\Seeders\JournalDemo`, a complete English-language business publication named **Kontur**:
 
 ```bash
 php artisan cms:demo --theme=journal --tenant=journal
 ```
 
-It creates Economy, Money, Property, and Work sections with original articles, an editorial about page, subscription options, shared footer navigation, localized media descriptions, and search metadata. Every person, quotation, organisation, price, and contact detail in the demo is explicitly fictional.
+It creates Economy, Money, Property, and Work sections with original articles, an editorial about page, subscription options, shared footer navigation, localized media descriptions, and search metadata.
 
 ## Page Types
 

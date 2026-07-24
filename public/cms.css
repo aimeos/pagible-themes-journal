@@ -192,7 +192,6 @@ header nav .brand a {
 }
 
 header nav ul.menu {
-    border-top: 1px solid var(--pico-muted-border-color);
     justify-content: center;
     min-height: 3.25rem;
     order: 3;
@@ -235,7 +234,7 @@ header nav details.dropdown[open] > summary:not([role]) {
 
 header nav ul.menu > li:first-child {
     inset-block-start: 2.25rem;
-    inset-inline-end: 2rem;
+    inset-inline-start: 2rem;
     position: absolute;
 }
 
@@ -245,7 +244,7 @@ header nav ul.menu > li:first-child a {
 
 header nav ul.menu > li:last-of-type {
     inset-block-start: 2.15rem;
-    inset-inline-start: 2rem;
+    inset-inline-end: 2rem;
     position: absolute;
 }
 
@@ -279,7 +278,7 @@ header nav details[open] summary::after {
 }
 
 header nav details > summary + ul.align {
-    border-top: 0.1875rem solid var(--pico-primary);
+    border-bottom: 0.1875rem solid var(--pico-primary);
     left: auto;
     right: auto;
     width: auto;
@@ -354,7 +353,7 @@ header nav .sidebar-close button {
     }
 
     header nav.small .menu {
-        border-top: 1px solid var(--pico-muted-border-color);
+        border-bottom: 1px solid var(--pico-muted-border-color);
         display: flex;
         flex-direction: column;
         padding-top: 1rem;
@@ -548,7 +547,7 @@ img {
 
 body > footer.bottom {
     background: var(--pico-contrast-inverse);
-    border-top: 1px solid var(--pico-muted-border-color);
+    border-bottom: 1px solid var(--pico-muted-border-color);
     padding: 2rem;
     text-align: center;
 }
@@ -561,7 +560,7 @@ body > footer.bottom .container {
     justify-content: center;
 }
 
-body > footer.bottom .brand img {
+body > footer.bottom img.brand {
     max-height: 2rem;
     max-width: 14rem;
 }

@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
 
 
 /**
- * Journal theme demo for the fictional English language business publication Kontur.
+ * Journal theme demo for the English language business publication Kontur.
  */
 class JournalDemo extends AbstractDemo
 {
@@ -35,8 +35,8 @@ class JournalDemo extends AbstractDemo
         'work' => 'Work, leadership, and culture beyond quick career advice: Kontur asks which structures genuinely make good work possible.',
         'productivity-needs-quiet' => 'Why focused work comes from protected time and clear responsibility—not another round of meetings, messages, and metrics.',
         'leadership-without-the-stage' => 'Good leadership is visible in decisions, preparation, and responsibility, not constant presence and grand performances.',
-        'about-kontur' => 'Kontur is a fictional independent business journal created for this demo. Meet its invented editorial team and explore how the publication works.',
-        'subscribe' => 'Read the fictional Kontur demo online, as a monthly print magazine, or through a member briefing with additional dossiers and conversations.',
+        'about-kontur' => 'Kontur is an independent business journal. Meet its editorial team and explore how the publication works.',
+        'subscribe' => 'Read Kontur online, as a monthly print magazine, or through a member briefing with additional dossiers and conversations.',
     ];
 
     /**
@@ -101,7 +101,7 @@ class JournalDemo extends AbstractDemo
                 'text' => "## An editorial room built for disagreement\n\nKontur is produced in Hamburg, with correspondents in Berlin, Frankfurt, Munich, Brussels, and Zurich. Expertise sits beside scepticism in every conference. The result is more exact, not more dramatic.\n\nWriters disclose investments and potential conflicts of interest. Companies may check quotations, but they never preview our conclusions.",
             ]],
             ['id' => Utils::uid(), 'type' => 'table', 'group' => 'main', 'data' => [
-                'title' => 'The fictional team',
+                'title' => 'The team',
                 'header' => 'row+col',
                 'table' => [
                     ['Desk', 'Editor', 'Base'],
@@ -111,9 +111,6 @@ class JournalDemo extends AbstractDemo
                     ['Property', 'Mira Solven', 'Hamburg'],
                     ['Work', 'Ivo Maren', 'Munich'],
                 ],
-            ]],
-            ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
-                'text' => '**Demo notice:** Kontur, its staff, quoted experts, organisations, prices, and contact details are fictional. Any resemblance to real people or businesses is coincidental.',
             ]],
             ['id' => 'contact', 'type' => 'contact', 'group' => 'main', 'data' => [
                 'title' => 'Write to the editorial team',
@@ -191,10 +188,6 @@ class JournalDemo extends AbstractDemo
                 'status' => 1,
             ], [
                 $this->article( $story['title'], $story['intro'], $this->img( $story['photo'] ) ),
-                ['id' => Utils::uid(), 'type' => 'heading', 'group' => 'main', 'data' => [
-                    'level' => 2,
-                    'title' => $story['heading'],
-                ]],
                 ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
                     'file' => ['id' => $this->img( $story['second'] ), 'type' => 'file'],
                     'position' => 'end',
@@ -239,7 +232,7 @@ class JournalDemo extends AbstractDemo
             ]],
             ['id' => Utils::uid(), 'type' => 'pricing', 'group' => 'main', 'data' => [
                 'title' => 'Choose your edition',
-                'text' => 'Cancel monthly. No advertising in the member area. All plans and prices are fictional demo content.',
+                'text' => 'Cancel monthly. No advertising in the member area.',
                 'items' => [
                     [
                         'name' => 'Digital',
@@ -278,7 +271,7 @@ class JournalDemo extends AbstractDemo
                     ['title' => 'Can I cancel monthly?', 'text' => 'Yes. Access continues until the end of the month you have already paid for.'],
                     ['title' => 'Is there a trial?', 'text' => 'The digital edition can be tested free for four weeks. It ends automatically unless you choose to continue.'],
                     ['title' => 'When is the magazine published?', 'text' => 'The new edition appears on the third Thursday of each month and usually arrives on the next working day.'],
-                    ['title' => 'Can I give a subscription as a gift?', 'text' => 'Yes. Fictional gift subscriptions run for three, six, or twelve months and do not renew automatically.'],
+                    ['title' => 'Can I give a subscription as a gift?', 'text' => 'Yes. Gift subscriptions run for three, six, or twelve months and do not renew automatically.'],
                 ],
             ]],
         ], $home );
@@ -339,7 +332,7 @@ class JournalDemo extends AbstractDemo
                 ['title' => 'Sections', 'text' => "- [Economy](/economy)\n- [Money](/money)\n- [Property](/property)\n- [Work](/work)"],
                 ['title' => 'Kontur', 'text' => "- [About the editors](/about-kontur)\n- [Contact](/about-kontur#contact)\n- [Subscribe](/subscribe)"],
                 ['title' => 'Briefings', 'text' => "- [Kontur Morning](/subscribe)\n- [Friday Briefing](/subscribe)\n- [Topic dossiers](/economy)"],
-                ['title' => 'Editorial', 'text' => "- [editorial@kontur.example](mailto:editorial@kontur.example)\n- Hamburg · Berlin · Frankfurt\n- Fictional demo publication"],
+                ['title' => 'Editorial', 'text' => "- [editorial@kontur.example](mailto:editorial@kontur.example)\n- Hamburg · Berlin · Frankfurt"],
             ];
 
             $element = Element::forceCreate( [
@@ -431,7 +424,7 @@ class JournalDemo extends AbstractDemo
                 'file' => ['id' => $this->img( 'technology' ), 'type' => 'file'],
                 'position' => 'end',
                 'ratio' => '1-2',
-                'text' => "## The new industrial atlas\n\nWhere are batteries, chips, heat pumps, and data centres being built? Kontur tracks 180 fictional investment projects to show which regions benefit—and where grids, land, or skilled workers are missing.\n\nThe imagined interactive map connects announced billions with visible building progress. A groundbreaking ceremony is not a factory.\n\n[Explore the industrial atlas story](/industry-without-a-blueprint)",
+                'text' => "## The new industrial atlas\n\nWhere are batteries, chips, heat pumps, and data centres being built? Kontur tracks 180 investment projects to show which regions benefit—and where grids, land, or skilled workers are missing.\n\nThe interactive map connects announced billions with visible building progress. A groundbreaking ceremony is not a factory.\n\n[Explore the industrial atlas story](/industry-without-a-blueprint)",
             ]],
             ['id' => Utils::uid(), 'type' => 'blog', 'group' => 'main', 'data' => [
                 'title' => 'The economy in context',
@@ -450,23 +443,19 @@ class JournalDemo extends AbstractDemo
                 ],
             ]],
             ['id' => Utils::uid(), 'type' => 'testimonial', 'group' => 'main', 'data' => [
-                'title' => 'Fictional voices from business',
+                'title' => 'Voices from business',
                 'items' => [
-                    ['name' => 'Dr. Sera Vale', 'role' => 'Energy economist · fictional', 'text' => 'The difficult question is not whether to invest. It is who carries which risk across the next twenty years.'],
-                    ['name' => 'Milo Kern', 'role' => 'Family business owner · fictional', 'text' => 'Transformation sounds like a project. In production, it is a series of practical decisions made every Monday morning.'],
-                    ['name' => 'Talia Brenn', 'role' => 'Urban planner · fictional', 'text' => 'Housing arrives faster when we treat existing buildings as material rather than as obstacles.'],
+                    ['name' => 'Dr. Sera Vale', 'role' => 'Energy economist', 'text' => 'The difficult question is not whether to invest. It is who carries which risk across the next twenty years.'],
+                    ['name' => 'Milo Kern', 'role' => 'Family business owner', 'text' => 'Transformation sounds like a project. In production, it is a series of practical decisions made every Monday morning.'],
+                    ['name' => 'Talia Brenn', 'role' => 'Urban planner', 'text' => 'Housing arrives faster when we treat existing buildings as material rather than as obstacles.'],
                 ],
             ]],
-            ['id' => Utils::uid(), 'type' => 'text', 'group' => 'main', 'data' => [
-                'text' => '*Kontur and every named person, quotation, organisation, price, and contact detail in this demo are fictional.*',
-            ]],
-            ['id' => Utils::uid(), 'type' => 'heading', 'group' => 'footer', 'data' => ['level' => 2, 'title' => 'Kontur']],
             ['type' => 'reference', 'refid' => $elementId, 'group' => 'footer'],
         ];
 
         $meta = [
             'meta-tags' => Validation::entry( 'meta-tags', [
-                'description' => 'Kontur is a fictional independent business journal with reporting and analysis on companies, money, property, and work.',
+                'description' => 'Kontur is an independent business journal with reporting and analysis on companies, money, property, and work.',
                 'keywords' => 'business journal, companies, investing, property, work, analysis',
             ], 'meta' ),
             'social-media' => Validation::entry( 'social-media', [
@@ -640,7 +629,6 @@ SVG;
             ], 'meta' ),
         ];
 
-        $content[] = ['id' => Utils::uid(), 'type' => 'heading', 'group' => 'footer', 'data' => ['level' => 2, 'title' => 'Kontur']];
         $content[] = ['type' => 'reference', 'refid' => $elementId, 'group' => 'footer'];
 
         $page = Page::forceCreate( $data + [
@@ -700,7 +688,6 @@ SVG;
                     'photo' => 'factory',
                     'second' => 'technology',
                     'intro' => "Industry is expected to become climate-neutral, digital, and more independent—all at once. On the factory floor, that has produced no master plan, only a series of difficult decisions about machines, energy, and people.",
-                    'heading' => 'Investing before certainty arrives',
                     'body' => "## New technology meets old dependencies\n\nA production line runs for twenty years. Replacing one today means committing to energy prices, software, and suppliers that nobody can predict with confidence. Strong operators divide the transition into small, measurable steps.\n\nThey begin where consumption data is missing, waste heat is unused, or one component makes the entire line dependent on a single source.",
                     'points' => [
                         ['Energy is measured separately', 'Investment can follow actual consumption rather than estimates'],
@@ -716,7 +703,6 @@ SVG;
                     'photo' => 'wind',
                     'second' => 'architecture',
                     'intro' => "Wind and solar farms increasingly produce inexpensive electricity. Yet the system between production and consumption still lacks lines, storage, and flexible tariffs. That gap will decide who earns from the energy transition.",
-                    'heading' => 'The return lies in the connection',
                     'body' => "## Infrastructure needs long commitments\n\nA battery facility can be completed in two years. A new transmission line may take a decade. Municipalities, network operators, industry, and investors therefore work to completely different clocks.\n\nNew models combine revenue from easing congestion, trading power, and providing reserve capacity. The essential step is to distribute risk openly before the first hour of shortage.",
                     'points' => [
                         ['Storage responds in seconds', 'It stabilises prices but cannot replace a resilient network'],
@@ -742,7 +728,6 @@ SVG;
                     'photo' => 'market',
                     'second' => 'savings',
                     'intro' => "A sound portfolio does not need every bet on the future. It needs a broad foundation, dependable costs, and rules for the moment prices fall and the plan suddenly feels outdated.",
-                    'heading' => 'Simple does not mean thoughtless',
                     'body' => "## The goal comes before the product\n\nSomeone buying a home in ten years needs a different allocation from someone with thirty years until retirement. The right mix starts with time, reserves, and tolerance for loss.\n\nOnly then come ETFs, bonds, or cash accounts. Products are tools. No ticker can repair an unclear decision.",
                     'points' => [
                         ['A global ETF forms the core', 'Regional bets remain small and deliberate'],
@@ -758,7 +743,6 @@ SVG;
                     'photo' => 'contract',
                     'second' => 'home',
                     'intro' => "Interest has returned, but not equally for everyone. Savers can earn a return again, borrowing remains expensive, and many contracts react more slowly than central-bank rates.",
-                    'heading' => 'Every term has a price',
                     'body' => "## Safety has a visible price again\n\nEasy-access cash remains flexible, but its yield can fall quickly. Fixed deposits lock capital away. Bond prices move when market rates change. Looking only at the highest percentage often hides the term and the limits on access.\n\nLoans deserve the same attention: overpayments, fixed-rate periods, and the remaining balance matter more than a single comparison rate.",
                     'points' => [
                         ['Liquidity has value', 'Not every euro should be locked away for the highest rate'],
@@ -784,7 +768,6 @@ SVG;
                     'photo' => 'city',
                     'second' => 'architecture',
                     'intro' => "New homes do not appear only on open land. Empty offices, car parks, and single-storey shops are becoming building sites within the city—when planners and owners can align.",
-                    'heading' => 'A second chance for the existing city',
                     'body' => "## Conversion does not automatically save money\n\nExisting structures, services, and hazardous materials make projects complicated. Roads, schools, and public transport, however, are often already present. The equation improves when planners identify early what can remain and which use suits the building.\n\nSmaller homes, shared rooms, and mixed ground floors create more value than maximising floor area alone.",
                     'points' => [
                         ['Office depths are tested', 'Not every structural grid can provide well-lit homes'],
@@ -800,7 +783,6 @@ SVG;
                     'photo' => 'home',
                     'second' => 'construction',
                     'intro' => "Windows, heating, roof, facade: considering everything at once quickly becomes overwhelming. A good renovation starts with the building and a sequence that later work will not undo.",
-                    'heading' => 'Read the house as a system',
                     'body' => "## Measure before requesting a quote\n\nConsumption data, thermal images, and a building survey reveal where energy is actually lost. Only then is it possible to decide whether a smaller heating system will work, which components belong together, and when residents may need to move out temporarily.\n\nSubsidies belong in the financial plan, but they should not justify a measure with little technical value.",
                     'points' => [
                         ['The envelope comes before heating', 'Future heat demand determines the right capacity'],
@@ -826,7 +808,6 @@ SVG;
                     'photo' => 'desk',
                     'second' => 'team',
                     'intro' => "Many companies measure activity and hope for performance. Focused work begins only when calendars, responsibilities, and digital tools protect a task instead of interrupting it.",
-                    'heading' => 'Time is part of the infrastructure',
                     'body' => "## Focus can be organised\n\nTwo meeting-free mornings do more than another time-management course. Clear decision paths stop every question from landing in five chats. Teams with dependable quiet time do not collaborate less—they arrive better prepared.\n\nThe important measure is not the number of messages sent, but the time required to reach a sound decision.",
                     'points' => [
                         ['Calendars share common rules', 'Focused time is not renegotiated with every request'],
@@ -842,7 +823,6 @@ SVG;
                     'photo' => 'portrait',
                     'second' => 'boardroom',
                     'intro' => "Visibility can provide direction. Constant presence cannot replace a decision. Good leadership often appears where roles become clear, conflicts are addressed, and other people gain room to act.",
-                    'heading' => 'Responsibility becomes concrete',
                     'body' => "## Clarity before charisma\n\nEmployees do not need a perfect personality at the top. They need understandable priorities, protection from contradictory instructions, and a leader who does not pass mistakes down the hierarchy.\n\nA good leader builds an organisation that can still make sensible decisions in their absence.",
                     'points' => [
                         ['Priorities are explained', 'Teams understand what can wait and why'],

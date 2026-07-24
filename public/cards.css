@@ -16,14 +16,14 @@
 
 .cards .card-item {
     background-color: var(--pico-contrast-inverse);
-    border-top: 0.1875rem solid var(--pico-contrast);
+    border-bottom: 0.1875rem solid var(--pico-contrast);
     min-width: 0;
     overflow: hidden;
     text-align: start;
 }
 
 .cards .card-item:hover {
-    border-top-color: var(--pico-primary);
+    border-bottom-color: var(--pico-primary);
 }
 
 .cards .card-item > picture {

@@ -20,21 +20,21 @@ Journal is sober, structured, and image-led. The page surround is warm gray (`#F
 
 - Typography: Georgia or the nearest system serif for masthead and headlines; Arial/Helvetica/system sans-serif for navigation, metadata, controls, and body UI
 - Headline rhythm: compact line height, strong weight, no centered marketing copy except the masthead
-- Surfaces: white editorial modules separated by warm-gray gutters and thin rules
+- Surfaces: consecutive content elements form one white editorial surface; warm-gray vertical gaps separate heroes and the outer content frame
 - Geometry: `--pico-border-radius: 0`; cards, dialogs, fields, and buttons stay square
 - Accent: ochre is reserved for categories, primary actions, focus, and active navigation
-- Images: editorial crops use `16 / 10`, article leads use `16 / 9`, and split features use `4 / 3`
+- Images: editorial crops use `16 / 10`, article leads use `16 / 9`, and hero media fills its section without distortion
 - Maximum width: 1156px shared page frame, with narrower article and prose measures where readability requires them
 
 ## Component Rules
 
 - Header: center the masthead above a separate category rail on desktop; collapse to one accessible menu below 992px
-- Hero: use a five-to-seven split with text first and one strong image second; never layer decorative gradients over the media
-- Story grids: give one lead story more visual weight and keep supporting stories compact
-- Cards: use a top rule instead of rounded containers or shadows; change the rule to ochre on hover
+- Hero: place the first content layer over the section image or slideshow and use a restrained dark overlay for legibility
+- Story grids: present blog entries as four equal editorial cards on desktop, two on tablets, and one on phones
+- Cards: use a bottom rule instead of rounded containers or shadows; change the rule to ochre on hover
 - Articles: keep introductions and body copy on a narrow measure, while cover images may use the full content width
 - Buttons: uppercase sans-serif labels, square borders, ochre primary action, white secondary action
-- Footer: use sectioned link columns, a strong top rule, and the same masthead identity as the header
+- Footer: use sectioned link columns, a strong bottom rule, and the same masthead identity as the header
 
 ## Accessibility
 

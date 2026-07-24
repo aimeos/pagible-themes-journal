@@ -5,13 +5,9 @@
 .questions details {
     background-color: var(--pico-contrast-inverse);
     border: 0;
-    border-top: 1px solid var(--pico-muted-border-color);
+    border-bottom: 1px solid var(--pico-muted-border-color);
     margin: 0;
     padding: 1.25rem 0;
-}
-
-.questions details:last-child {
-    border-bottom: 1px solid var(--pico-muted-border-color);
 }
 
 .questions summary {
